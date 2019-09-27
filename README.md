@@ -36,4 +36,4 @@ ID        |Name                      |Equation                               |De
 rxn00816  |Lactose galactohydrolase  |cpd00001+cpd00208<=>cpd00027+cpd00108  |H2O+LACT<=>D-Glucose+Galactose  |(fig|349741.147.peg.1993)
 ````
 
-Creates merged_map.json file as a result.
+Creates map_with_new_genes.json file as a result.
