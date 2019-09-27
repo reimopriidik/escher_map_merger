@@ -4,14 +4,12 @@ import pandas as pd
 #######
 ## Define the file names!
 #######
-
 template_map = 'map1.json'
 new_map = 'map2.json'
 
 #######
 ## reads the files and puts the data into dictionaries and a data frame
 #######
-
 #reads the two maps as json file
 with open (new_map, 'r') as json_file:
     new_map = json.load(json_file)
@@ -50,7 +48,6 @@ new_rxn_nodes['nodes'] = new_temp_nodes
 #######
 ## positioning the template_map below new_map
 #######
-
 y_coef = list()
 for i in new_map[1]['reactions']:
     y_coef.append(new_map[1]['reactions'][i]['label_y'])
@@ -89,7 +86,6 @@ if len(list(template_map[1]['text_labels']))>0:
 #######
 ## merging the two json map dicts
 #######
-
 #changes segments.keys() and puts everything into segments_new
 new_seg = int(list(new_map[1]['reactions'][list(new_map[1]['reactions'])[-1]]['segments'])[-1])+1
 for i in list(new_rxn_nodes['reactions'].keys()):
@@ -143,7 +139,6 @@ del k
 #######
 ## resizing the canvas
 #######
-
 x_axis = list()
 y_axis = list()
 for i in new_map[1]['reactions']:
@@ -160,6 +155,5 @@ del x_axis, y_axis
 #######
 ## saving the new map as merged_map.json
 #######
-
 with open('merged_map.json', 'w') as f:
         json.dump(new_map, f)
